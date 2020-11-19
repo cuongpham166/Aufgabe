@@ -1,0 +1,95 @@
+﻿@model MovieData.ViewsModels.MovieDetailViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form method="post" asp-action="Create">
+   <div class="border p-3">
+       <div class="form-group row">
+           <h2 class="text-info pl-3">Add New Movie</h2>
+       </div>
+       <div class="row">
+           <div class="col-8">
+
+               <div class="form-group row">
+                   <div class="col-4">
+                       <label asp-for="Movie.Title"></label>
+                   </div>
+                   <div class="col-8">
+                       <input asp-for="Movie.Title" class="form-control" />
+                   </div>
+               </div>
+
+               <div class="form-group row">
+                   <div class="col-4">
+                       <label asp-for="Movie.ImageUrl"></label>
+                   </div>
+                   <div class="col-8">
+                       <input asp-for="Movie.ImageUrl" class="form-control" />
+                   </div>
+               </div>
+
+               <div class="form-group row">
+                   <div class="col-4">
+                       <label asp-for="Movie.Score"></label>
+                   </div>
+                   <div class="col-8">
+                       <input asp-for="Movie.Score" class="form-control" />
+                   </div>
+               </div>
+
+               <div class="form-group row">
+                   <div class="col-4">
+                       <label asp-for="Movie.Genre"></label>
+                   </div>
+                   <div class="col-8">
+                       <select asp-items="@(new SelectList(Model.Genres))" asp-for="Movie.Genre" class="form-control">
+                           <option value="" disabled selected>Select one option</option>
+                       </select>
+                   </div>
+               </div>
+
+               <div class="form-group row">
+                   <div class="col-4">
+                       <label asp-for="Movie.Date"></label>
+                   </div>
+                   <div class="col-8">
+                       <input asp-for="Movie.Date" class="form-control" />
+                   </div>
+               </div>
+               <div class="form-group row">
+                   <div class="col-4">
+                       <label asp-for="Movie.Overview"></label>
+                   </div>
+                   <div class="col-8">
+                       <textarea asp-for="Movie.Overview" class="form-control"></textarea>
+                   </div>
+               </div>
+
+               <div class="form-group row">
+                   <div class="col-8 offset-4 row">
+
+                       <div class="col">
+                           <input type="submit" class="btn btn-info w-100" value="Create" />
+                       </div>
+                       <div class="col">
+                           <a asp-action="Index" class="btn btn-success w-100">Back</a>
+                       </div>
+                   </div>
+               </div>
+
+
+
+
+
+
+
+
+
+               <div class="col-4">
+                   @* Keep this empty *@
+               </div>
+           </div>
+   </div>
+</form>
